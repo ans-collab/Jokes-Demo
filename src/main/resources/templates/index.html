@@ -24,19 +24,33 @@
       font-size: 2rem;
     }
      .actions {
+      width: min(100%, 36rem);
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
       gap: 1rem;
     }
     .actions button {
-      min-width: 10rem;
+      flex: 1 1 10rem;
+      min-width: 0;
+      height: 7rem;
       padding: 1rem 2rem;
       border: none;
       border-radius: 0.5rem;
       font-size: 1.25rem;
       font-weight: bold;
       cursor: pointer;
+      box-sizing: border-box;
+    }
+    @media (max-width: 36rem) {
+      .actions {
+        flex-direction: column;
+      }
+
+      .actions button {
+        width: 70%;
+      }
     }
   </style>
 
