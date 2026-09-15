@@ -15,6 +15,11 @@
       align-items: center;
       justify-content: center;
     }
+    #cheese { 
+      width: 180px; 
+      height: auto; 
+      margin-bottom: 1rem; 
+    }
     #pageTitle {
       margin: 0 0 1rem;
       font-size: 3rem; 
@@ -59,12 +64,16 @@
   <title th:text="${pageTitle}">Cheesy Jokes Corner</title>
   <script>
     function callGetJokes(jokeType,uri) {
-      console.log("calling getJokes.." + jokeType);
-      window.location.href = "/getJokes?jokeType=" + jokeType ;
+      console.log("JokeType {} :" + jokeType);
+      const rootPath = window.location.origin;
+      console.log("rootPath {} :" + rootPath);
+      window.location.href = rootPath + "/getJokes?jokeType=" + jokeType ;
+      //window.location.href =  "/getJokes?jokeType=" + jokeType ;
     }
   </script>
 </head>
 <body>
+  <img id="cheese" src="/img/cheese.png"  alt="Cheese">
   <p id="pageTitle" th:text="${pageTitle}">Loading...</p>
   <p id="msg" th:text="${msg}">Loading...</p>
   <div class="actions"> 
