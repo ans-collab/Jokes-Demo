@@ -7,7 +7,7 @@ A simple extensible Spring boot project that generates random jokes based on the
 ## URL
 
 ```
-http://54.85.26.64:8080/
+https://two-mites.com/christinechavez/projects/jokes
 ```
  
 
