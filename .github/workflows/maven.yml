@@ -52,7 +52,7 @@ jobs:
         echo "Resolving EC2_HOST..." 
         getent hosts "${{ secrets.EC2_HOST }}"
 
-        echo "Testing port 22..."
+        echo "Testing port 22.."
         nc -vz -w 10 "${{ secrets.EC2_HOST }}" 22
       
     - name: Copy JAR to Linux EC2 via SSH
