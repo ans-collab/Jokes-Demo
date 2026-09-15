@@ -47,6 +47,14 @@ jobs:
         name: demo-jar
         path: target/
 
+    - name: Test EC2 SSH connectivity
+      run: | 
+        echo "Resolving EC2_HOST..." 
+        getent hosts "${{ secrets.EC2_HOST }}"
+
+        echo "Testing port 22..."
+        nc -vz -w 10 "${{ secrets.EC2_HOST }}" 22
+      
     - name: Copy JAR to Linux EC2 via SSH
       uses: appleboy/scp-action@master
       with:
